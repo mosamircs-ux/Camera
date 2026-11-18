@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_launcher_name">Camera</string>
+    <string name="app_launcher_name">Lumina Camera</string>
+    <string name="lumina_hud_badge">LUMINA</string>
+    <string name="lumina_settings_tagline">Precision Pro Photography • v%1$s</string>
+    <string name="camera_controls_section">Camera Controls</string>
+    <string name="about_lumina_message">Lumina Camera v%1$s\n\nA fast, precision CameraX photo and video studio designed with the Lumina Midnight interface.\n\nOpen-source software licensed under GNU GPL v3.0 (derived from Fossify Camera).</string>
     <string name="capture_mode">Capture mode</string>
     <string name="maximize_quality">Maximize quality</string>
     <string name="minimize_latency">Minimize latency</string>
@@ -53,8 +57,4 @@
     <string name="photo_compression_quality">Photo compression quality</string>
     <string name="shutter">Shutter</string>
     <string name="max_brightness">Max screen brightness in preview</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

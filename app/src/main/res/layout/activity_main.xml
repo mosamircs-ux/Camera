@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@android:color/black">
+    android:background="@color/lumina_obsidian">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/preview_view"
@@ -20,12 +20,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0"
-        android:background="@android:color/black" />
+        android:background="@color/lumina_obsidian" />
 
     <FrameLayout
         android:id="@+id/top_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_lumina_glass_pill"
+        android:elevation="6dp"
+        android:paddingStart="6dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -44,6 +53,26 @@
 
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/lumina_brand_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0.82"
+        android:letterSpacing="0.22"
+        android:shadowColor="#B3000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="4"
+        android:text="@string/lumina_hud_badge"
+        android:textAllCaps="true"
+        android:textColor="@color/lumina_cyan"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_options" />
+
     <TextSwitcher
         android:id="@+id/timer_text"
         android:layout_width="wrap_content"
@@ -57,7 +86,7 @@
         android:id="@+id/bottom_overlay"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/overlay_color"
+        android:background="@drawable/bg_lumina_bottom_scrim"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,23 +96,28 @@
         android:id="@+id/camera_mode_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/medium_margin"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/bg_lumina_mode_track"
+        android:paddingStart="6dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="2dp"
         app:layout_constraintBottom_toTopOf="@id/shutter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/camera_mode_tab"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/big_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
             android:background="@android:color/transparent"
             app:tabBackground="@drawable/tab_indicator"
             app:tabIndicator="@null"
-            app:tabMode="auto"
+            app:tabMinWidth="84dp"
+            app:tabMode="fixed"
             app:tabRippleColor="@null"
-            app:tabSelectedTextColor="@color/md_grey_600_dark"
-            app:tabTextColor="@color/md_grey_white">
+            app:tabSelectedTextColor="@color/lumina_tab_selected_text"
+            app:tabTextColor="@color/lumina_text_primary">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -103,8 +137,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/smaller_margin"
-        android:textColor="@android:color/white"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/bg_lumina_rec_badge"
+        android:letterSpacing="0.08"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="6dp"
+        android:textColor="@color/lumina_text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/shutter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,11 +156,11 @@
 
     <ImageView
         android:id="@+id/last_photo_video_preview"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
         android:background="@drawable/camera_button_background"
         android:contentDescription="@string/view_last_media"
-        android:padding="@dimen/tiny_margin"
+        android:padding="3dp"
         app:layout_constraintBottom_toBottomOf="@id/shutter"
         app:layout_constraintEnd_toStartOf="@id/shutter"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -128,10 +170,11 @@
 
     <ImageView
         android:id="@+id/shutter"
-        android:layout_width="@dimen/large_icon_size"
-        android:layout_height="@dimen/large_icon_size"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
         android:layout_marginBottom="@dimen/big_margin"
         android:contentDescription="@string/shutter"
+        android:elevation="6dp"
         android:src="@drawable/ic_shutter_animated"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,11 +183,11 @@
 
     <ImageView
         android:id="@+id/toggle_camera"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
         android:background="@drawable/camera_button_background"
         android:contentDescription="@string/toggle_camera"
-        android:padding="@dimen/medium_margin"
+        android:padding="13dp"
         android:src="@drawable/ic_flip_camera_vector"
         app:layout_constraintBottom_toBottomOf="@id/shutter"
         app:layout_constraintEnd_toEndOf="parent"

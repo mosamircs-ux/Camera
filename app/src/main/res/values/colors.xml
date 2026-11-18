@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="overlay_color">#2e000000</color>
+    <color name="overlay_color">#CC080B14</color>
+    <color name="lumina_obsidian">#080B14</color>
+    <color name="lumina_midnight_surface">#0D1324</color>
+    <color name="lumina_midnight_card">#141C33</color>
+    <color name="lumina_glass_pill">#C20B1020</color>
+    <color name="lumina_glass_border">#4500E5FF</color>
+    <color name="lumina_card_border">#2200E5FF</color>
+    <color name="lumina_cyan">#00E5FF</color>
+    <color name="lumina_cyan_dark">#00B8D4</color>
+    <color name="lumina_violet">#7C4DFF</color>
+    <color name="lumina_coral_rec">#FF3B5C</color>
+    <color name="lumina_text_primary">#F5F8FF</color>
+    <color name="lumina_text_secondary">#99A8C7</color>
+    <color name="lumina_tab_selected_text">#07101C</color>
 </resources>
